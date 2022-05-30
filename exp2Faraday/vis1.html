@@ -12,8 +12,51 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs >
+    <a-scene embedded arjs animation-timeline__1="timeline: #myTimeline; loop: true">
         <a-assets timeout="20000">
+            <a-timeline id="myTimeline">
+      <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
+      <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
+      <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
+      <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
+ 
+      <a-timeline-group>
+        <a-timeline-animation select="a-entity[mixin~=box]" name="fadein"></a-timeline-animation>
+        <a-timeline-animation select="a-entity[mixin~=box]" name="scale"></a-timeline-animation>
+        <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
+      </a-timeline-group>
+ 
+      <a-timeline-group>
+        <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
+        <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
+        <a-timeline-animation select="#text2" name="textcolor"></a-timeline-animation>
+      </a-timeline-group>
+ 
+      <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
+      <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
+ 
+      <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
+      <a-timeline-group>
+        <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
+        <a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>
+        <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation>
+        <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
+        <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
+      </a-timeline-group>
+ 
+      <a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
+      <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
+ 
+      <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
+ 
+      <a-timeline-group>
+        <a-timeline-animation select="#sky" name="color"></a-timeline-animation>
+        <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
+      </a-timeline-group>
+ 
+      <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
+    </a-timeline>
+            <!---->
             <a-asset-item id="base" src="../exp2Faraday/assets/base2.dae"></a-asset-item>
             <a-asset-item id="multimetro" src="../exp2Faraday/assets/multimetro1.dae"></a-asset-item>
             <a-asset-item id="flecha" src="../exp2Faraday/assets/flecha.dae"></a-asset-item>
